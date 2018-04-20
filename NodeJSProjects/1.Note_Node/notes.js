@@ -48,7 +48,12 @@ var getAll = () => {
 };
 var getNote = (title) => {
 
-	console.log("Getting Note! ",title);
+	// fetch
+	// filter
+	// return 
+	var notes = fetchNotes();
+	var filteredNotes = notes.filter((note) => note.title === title);
+	return filteredNotes[0];
 
 };
 var removeNote = (title) => {
@@ -62,10 +67,18 @@ var removeNote = (title) => {
 	return notes.length !== filteredNotes.length;
 };
 
+var logNote = (note) => {
+	debugger;
+	console.log('--');
+	console.log(`Title: ${note.title}`);
+	console.log(`Body: ${note.body}`);
+};
+
 // this has a property addNote which points to the upper addNote function(ES6 Syntax)
 module.exports = {
 	addNote,
 	getAll,
 	getNote,
-	removeNote
+	removeNote,
+	logNote
 };
