@@ -1,0 +1,30 @@
+Async Basics:-
+	App will run while it is waiting for something to happen(MultiThread)
+
+		/*
+			console.log('Starting app');
+
+			setTimeout(()=>{
+				console.log('Inside from setTimeout!')
+			},2000); // to prove that node is Async
+
+			console.log('Finishing up');
+		*/
+		==> 
+			Starting app
+			Finishing up
+			Inside from setTimeout!
+		<==
+
+		In Async programme, we use four things
+			=> call stack
+			=> node API(eg-setTimeout)
+			=> callback queue
+			=> event loop
+
+		after compelting the time of node API they have to wait in callback queue
+		then event loop comes into picture, it checks if call stack is empty, if it is
+		, it will execute the statements in callback queue, otherwise from call stack.
+
+Callback functions :- it can be passed as an argument from any function, and is executing 	
+						after some event happens. 
