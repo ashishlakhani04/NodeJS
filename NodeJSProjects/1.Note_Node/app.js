@@ -12,7 +12,30 @@ const yargs = require('yargs');
 
 const notes = require('./notes');
 
-const argv = yargs.argv;
+const titleOptions = {
+	describe: 'Title of note',
+	demand: true, // Title is mandatory
+	alias: 't' // shortcut
+}
+const bodyOptions = {
+	describe: 'Body of note',
+	demand: true,
+	alias: 'b'
+}
+const argv = yargs
+.command('add','Add a new Note!',{
+	title:titleOptions,
+	body:bodyOptions
+})
+.command('list','List all Notes!')
+.command('read','Read a Note!',{
+	title:titleOptions
+})
+.command('remove','Remove a Note!',{
+	title:titleOptions
+})
+.help()
+.argv;
 // var command = process.argv[2]; // first two index contain other useful value of directory structure
 // console.log(process.argv); // process.argv takes the parameter from command line
 // console.log("Command: ",command);
