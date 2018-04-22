@@ -1,7 +1,7 @@
 var person = {
 	name: 'Andrew'
 };
-person.age = 25;
+person.age = 26;
 
 debugger; // we can use this to break here and not on every line and command 'c' to come to this line at one go and another 'c' to read the lines below 
 
@@ -19,3 +19,9 @@ console.log(person);
 // 'n' it is a command used in debug mode which is a short form of next to carry on the process
 // 'c'	Continue (may be allowed, depends on reason debug was entered) end Terminate debugger
 // 'repl' Open debugger's repl for evaluation in debugging script's context
+
+
+
+
+// debugging via Chrome dev tools
+// node --inspect-brk
